@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Bitcoin - Tweet Sentiment Visualization</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>	
+	<!-- velocimetro -->
+	<img src="nuvem_palavras.png" id="img" name="refresh">
+	<SCRIPT language="JavaScript" type="text/javascript"> 
+		image = "nuvem_palavras.png" //URL of the Image 
+		function Start() { 
+		tmp = new Date(); 
+		tmp = "?"+tmp.getTime() 
+		document.images["refresh"].src = image+tmp 
+		setTimeout("Start()", 60000) 
+		} 
+		Start(); 
+	</SCRIPT>
+	
+	<div id="tudo">
+	<center><div id="chartdiv"></div><div id="carregando">Carregando...</div></center><br>
+	<div class="particlesContainer"></div>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<script src="https://www.amcharts.com/lib/4/core.js"></script>
+	<script src="https://www.amcharts.com/lib/4/charts.js"></script>
+	<script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+
+	<script src="script.js"></script>
+	<script src="velocimetro.js"></script>
+	
+	<!-- TradingView Widget BEGIN -->
+	<div class="tradingview-widget-container">
+	  <div id="tradingview_45e84"></div>
+	  <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+	  <script type="text/javascript">
+	  new TradingView.widget(
+		  {
+		  "autosize": false,
+		  "width": 700,
+		  "height": 450,
+		  "symbol": "COINBASE:BTCUSD",
+		  "interval": "1",
+		  "timezone": "America/Sao_Paulo",
+		  "theme": "Dark",
+		  "style": "1",
+		  "locale": "br",
+		  "toolbar_bg": "#f1f3f6",
+		  "enable_publishing": false,
+		  "save_image": false,
+		  "calendar": false,
+		  "container_id": "tradingview_45e84"
+		}
+	  );
+	  </script>
+	<!-- TradingView Widget END -->	
+	</div>
+</body>
+</html>

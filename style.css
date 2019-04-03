@@ -1,0 +1,86 @@
+#tudo{
+	margin-left: 4.5%;
+}
+
+#chartdiv {
+	margin-top: 13px;
+	width: 50%;
+	height: 190px;
+}
+
+#img {
+	position: absolute;
+	top: 20px;
+	z-index: -1;
+	margin-left: -30px;
+}
+
+body{
+	background-color: #f7f9f9;
+	margin: 0;
+	padding: 0;
+	overflow: hidden
+}
+
+.particlesContainer{
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.particle{
+	display: inline-flex;
+	position: absolute;
+	height: 5rem;
+	width: 5rem;
+	left: 0;
+	right: 0;
+	top: 100%;
+	box-shadow: 0px 2px 10px rgba(0,0,0,0.5);
+	margin: auto;
+	background-image: url('emoji.gif');
+	background-size: 50rem;
+	background-repeat: no-repeat;
+	border-radius: 40px;
+	background-color: #ffffff;
+}
+
+.particle.like{
+	background-position-x: -68px;
+	background-position-y: -90px;
+}
+
+.particle.love{
+	background-position-x: -162px;
+	background-position-y: -90px;
+}
+
+.particle.happy {
+	background-position-x: -257px;
+	background-position-y: -90px;
+}
+
+.particle.wow {
+	background-position-x: -446px;
+	background-position-y: -90px;
+}
+
+.particle.sad {
+	background-position-x: -540px;
+	background-position-y: -90px;
+}
+.particle.angry {
+	background-position-x: -634px;
+	background-position-y: -90px;
+}
+
+.particle.yay {
+	background-position-x: -351px;
+	background-position-y: -90px;
+}
