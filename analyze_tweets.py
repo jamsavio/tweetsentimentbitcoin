@@ -95,7 +95,7 @@ def extract_words(word):
 	elif len(words) > 300:
 		words.pop(0)
 		words.append(word)
-		#generate_wordcloud()
+		generate_wordcloud()
 	
 def generate_wordcloud():
 	text = str(words).lower()
