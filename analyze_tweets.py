@@ -95,25 +95,26 @@ def extract_words(word):
 	elif len(words) > 300:
 		words.pop(0)
 		words.append(word)
-		generate_wordcloud()
+		#generate_wordcloud()
 	
 def generate_wordcloud():
 	text = str(words).lower()
 	text = text.replace('[','').replace(']','').replace("'",'').replace(",", ' ')
 	
-	mask = np.array(Image.open("cloud.png"))
-	cloud = WordCloud(background_color="#f7f9f9", mode="RGBA", mask=mask).generate(text) #, 
+	mask = np.array(Image.open("C:/xampp/htdocs/cripto/cloud.png"))
+	cloud = WordCloud(background_color="#f7f9f9", mode="RGBA", mask=mask).generate(text), 
 	image_colors = ImageColorGenerator(mask)
 	plt.figure(figsize=[7,6.3], facecolor='#f7f9f9')
 	plt.imshow(cloud.recolor(color_func=image_colors), interpolation="bilinear")
 	plt.axis("off")
 	plt.tight_layout(pad=0)
-	plt.savefig("nuvem_palavras.png", format="png", facecolor='#f7f9f9', bbox_inches='tight')
+	plt.savefig("C:/xampp/htdocs/cripto/nuvem_palavras.png", format="png", facecolor='#f7f9f9', bbox_inches='tight')
 	plt.close('all')
 	words.clear()
 		
 auth=OAuthHandler(ckey,csecret)
 auth.set_access_token(atoken,asecret)
 
-twitterStream = Stream(auth, listener())
-twitterStream.filter(track=["bitcoin","#bitcoin","$bitcoin","$BTC","#BTC"], languages=["en"])
+if __name__ == '__main__':
+	twitterStream = Stream(auth, listener())
+	twitterStream.filter(track=["bitcoin","#bitcoin","$bitcoin","$BTC","#BTC"], languages=["en"])
